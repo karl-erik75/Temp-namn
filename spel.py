@@ -4,6 +4,8 @@ global land
 land = True
 import random
 global age
+global kr 
+kr = 7
 #-----------------------------------------------------------------------
 def start():
     global styrka
@@ -13,13 +15,13 @@ def start():
    
     print("\033c", end="")
     print("du heter", (namn), "din ålder är", (age), "du är en", (kön))
-    if age > 70:
+    if age >= 70:
         age2 = "gamal"
         input("du är över 70 vad som gjör att du blir långsamare och svagare men smartare")
         fart = 5
         styrka = 5
         iq = 15
-    elif age < 18:
+    elif age <= 18:
         age2 = "ung"
         input("du är under 18 som gjör dig dunmare! och lite svagare samt långsamare ")
         fart = 15
@@ -37,42 +39,115 @@ def start():
 #-----------------------------------------------------------------------
 def start_event():
     print("\033c", end="")
+
+    input("du vaknar up en fin somar dag")
+    input("du välger att gå ner i köket")
     #ung
     #-----------------------------------------------------------------------
     event = random.randint(1,3)
     if age2 == "ung" and event == 1:
-        input("du och din mama bråkar...")
+        input("du och din mama börjar bråka...")
         input("igen")
         input("-jag står inte ut med dig mera! skriker din mamma")
         input("hon pekar på dören bestämt -ut! skriker hon")
         input("du blir utsparkad från dit häm")
-        fråga()
+        input("om dom inte vill ha dig där varför skule du vilja gå tillbaka? säger du till dig skälv")
+        hem_by_fråga()
 
     elif age2 == "ung" and event ==2:
+        input("du komerihåg att du inte står ut med dina föräldrar längre")
+        input("du välger att fly hämifrån")
+        hem_by_fråga()
 
     elif age2 == "ung" and event ==3:
+        input("-du börjar bli för gamal nu! skirker din far när han ser dig i köket")
+        input("han ger dig inget och sparkar ut dig")
+        hem_by_fråga()
+
 
     #-----------------------------------------------------------------------
 
     #medianålder
     #-----------------------------------------------------------------------
     elif age2 == "normal" and event ==1:
+        input("du mins att du avkyr din sambo och du välger att fly från hern utan att säga ett pip")
+        hem_by_fråga()
 
     elif age2 == "normal" and event ==2:
+        input("din far tycker du är för gamal för att bo med han!")
+        print("för fan du är ju", age, "nu! skriker han")
+        input("du blir ut sparkad")
+        hem_by_fråga()
 
     elif age2 == "normal" and event ==3:
+        input("sen mins du...")
+        input("du är ensam")
+        input("du har inga kompisar")
+        input("du har inget jobb")
+        input("du har ingen som älskar dig")
+        input("du stinker")
+        input("och ingen gillar dig")
+        input("börja gjöra något bror!")
+        hem_by_fråga()
 
     #-----------------------------------------------------------------------
     #gamal
     #-----------------------------------------------------------------------
     elif age2 == "gamal" and event ==1:
+        input("ålderdomshämets personal står inte ut med dig mera")
+        input("du blir utsparkad")
+        hem_by_fråga()
 
     elif age2 == "gamal" and event ==2:
+        input("dit barn barn tar dig till sofan med en stor stark kille brevid han")
+        input("-papa jag gillar men, säger dit barn barn")
+        input("dit ända barn barn är gay?!?!")
+        input("du springer för ditt liv för att du vill inte få gay baciller")
+        hem_by_fråga()
 
     elif age2 == "gamal" and event ==3:
+        input("du ser din fru med en ung snyg star karr")
+        input("du inser du att...")
+        input("en ung grab stal din sambo hur vågar han!")
+        input("du springer iväg och gråter samtidigt ")
+        hem_by_fråga()
 
     #-----------------------------------------------------------------------
-   
+#-----------------------------------------------------------------------
+#-----------------------------------------------------------------------
+def hem_by_fråga():
+    print("\033c", end="")
+    input("du vill aldrig gå tilbaka igen! du välger att fly och starta ett nyt liv!")
+    åka = input("vart vill du gå nu? skriv (karta) om du vill see vart man kan gå ")
+    if åka == "karta":
+        åka = input("du kan gå till (affären) eller skafa (jobb)🤮")
+
+
+    elif åka == "affären":
+        print("du tänkte gå till affären fast du mins att du är fattig så du välger att gå tillbaka")
+        åka = input("du kan gå ock skaffa ett (jobb)🤮")
+        if åka == "jobb":
+            intro()
+
+
+    else:
+        input("du valde att skafa ett jobb🤮")
+        intro()
+#-----------------------------------------------------------------------
+def intro():
+    global kr
+    kr = 1023
+    print("\033c", end="")
+    input("du har jobbat som en diskare i 3 år nu")
+    input("året är nu 1720")
+    input("du förlorade dit jobb")
+    input("du fick i totalt 1023 pengar över från de 3 år du jobbade 😬")
+    
+
+
+    
+
+
     
 
 
@@ -110,11 +185,13 @@ while fråga11 == True:
 
     kön = input("vill du vara man eller kvina? ")
 
-    if kön != "man" or kön != "kvina" or kön != "Man" or kön != "Kvina":
-        print("du får bara vara en man eller en kvina grr")
+    if kön != "man" and kön != "kvina" and kön != "Man" and kön != "Kvina":
+        print("du kan bara vara en (man) eller (kvina)")
 
-    if age <= 14 or age >= 100:
-        print("du har en orimlig ålder ten en ålder melan 14 och 100")
+    elif age <= 14 and age >= 100:
+        print("orimlig ålder välg en ålder melan 14 - 100")
+
+    
 
     else:
         fråga11 == False
