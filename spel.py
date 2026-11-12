@@ -1,3 +1,4 @@
+import time
 global namn
 global kön6
 global land
@@ -117,10 +118,21 @@ def start_event():
 #-----------------------------------------------------------------------
 def hem_by_fråga():
     print("\033c", end="")
-    input("du vill aldrig gå tilbaka igen! du välger att fly och starta ett nyt liv!")
+    input("du vill aldrig gå tillbaka igen! du välger att fly och starta ett nyt liv!")
     åka = input("vart vill du gå nu? skriv (karta) om du vill see vart man kan gå ")
     if åka == "karta":
         åka = input("du kan gå till (affären) eller skafa (jobb)🤮")
+        if åka == "affären":
+            print("du tänkte gå till affären fast du mins att du är fattig så du välger att gå tillbaka")
+            åka = input("du kan gå ock skaffa ett (jobb)🤮")
+            if åka == "jobb":
+                intro()
+
+
+        else:
+            input("du valde skafa ett jobb")
+            intro()
+
 
 
     elif åka == "affären":
@@ -135,13 +147,26 @@ def hem_by_fråga():
         intro()
 #-----------------------------------------------------------------------
 def intro():
+    global age
     global kr
-    kr = 1023
+    age += 3
+    kr = 2500
     print("\033c", end="")
     input("du har jobbat som en diskare i 3 år nu")
     input("året är nu 1720")
     input("du förlorade dit jobb")
-    input("du fick i totalt 1023 pengar över från de 3 år du jobbade 😬")
+    input("du fick i totalt 2500 pengar över från de 3 år du jobbade 😬")
+    input("2 månader senare du har fortfarande inget jobb... ")
+    input("du har också förlorat dit hus som du köpte igår 😬")
+    input(":(")
+    while True:
+        fråg = input("vart vill du gå nu? skriv (karta) om du vill see vsrt du kan gå")
+        if fråg == "karta":
+            print("skriv (affär) får att gå till affären. skriv (jobb) för att skafa jobb. skriv (båt affär) för att sköpa en båt")
+        elif fråg == "affär":
+            print("de är stängda just nu")
+
+        elif fråg == "jobb":
     
 
 
@@ -172,33 +197,28 @@ def intro():
 
 
 
+while loop == True:
+    #-----------------------------------------------------------------------
+    fråga11 = True
+    print("\033c", end="")
+    while fråga11 == True:
+        namn = input("Vad vill du heta? ")
 
+        age = int(input("vilken ålder vill du vara? "))
 
+        kön = input("vill du vara man eller kvinna? ")
 
-#-----------------------------------------------------------------------
-fråga11 = True
-print("\033c", end="")
-while fråga11 == True:
-    namn = input("Vad vill du heta? ")
+        if kön != "man" and kön != "kvinna" and kön != "Man" and kön != "Kvinna" or age < 14 or age > 100:
+            print("du kan bara vara en (man) eller (kvinna) arnars orimlig ålder (du måste vara melan 14 och 100)")
 
-    age = int(input("vilken ålder vill du vara? "))
+        
+        loop = False
+        else:
+            fråga11 == False
+            start()
+    #-----------------------------------------------------------------------
 
-    kön = input("vill du vara man eller kvina? ")
-
-    if kön != "man" and kön != "kvina" and kön != "Man" and kön != "Kvina":
-        print("du kan bara vara en (man) eller (kvina)")
-
-    elif age <= 14 and age >= 100:
-        print("orimlig ålder välg en ålder melan 14 - 100")
-
-    
-
-    else:
-        fråga11 == False
-        start()
-#-----------------------------------------------------------------------
-
-
+print("SLUT SLUT SLUTAAA!")
 
 
     

@@ -6,11 +6,6 @@
 
 ## todo
 
-#### gjör så att man kan sköpe en båt
-<!-- id: task-1793873592948-70 -->
-<!-- priority: high -->
-<!-- workload: easy -->
-
 #### gjör så att man kan jaga efter djur
 <!-- id: task-1793873674615-131 -->
 <!-- priority: low -->
@@ -26,6 +21,16 @@
 <!-- id: task-1793873838864-197 -->
 
 ## jobbas med
+
+#### gjör så att man kan sköpe en båt
+<!-- id: task-1793873592948-70 -->
+<!-- priority: high -->
+<!-- workload: easy -->
+
+#### gjör så att det fins olika öar
+<!-- id: task-1794479393511-454 -->
+<!-- priority: high -->
+<!-- workload: easy -->
 
 ## klart
 
