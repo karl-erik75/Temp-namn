@@ -6,7 +6,10 @@ land = True
 import random
 global age
 global kr 
+ro_båt = False
+fiske_båt = False
 kr = 7
+#saker (kommer att sortera snart, karnse)
 #-----------------------------------------------------------------------
 def start():
     global styrka
@@ -40,7 +43,6 @@ def start():
 #-----------------------------------------------------------------------
 def start_event():
     print("\033c", end="")
-
     input("du vaknar up en fin somar dag")
     input("du välger att gå ner i köket")
     #ung
@@ -163,10 +165,110 @@ def intro():
         fråg = input("vart vill du gå nu? skriv (karta) om du vill see vsrt du kan gå")
         if fråg == "karta":
             print("skriv (affär) får att gå till affären. skriv (jobb) för att skafa jobb. skriv (båt affär) för att sköpa en båt")
+        
         elif fråg == "affär":
             print("de är stängda just nu")
 
         elif fråg == "jobb":
+            print("ingen vill anstäla dig ")
+
+        elif fråg == "båt affär":
+            input("du gick till båt affären")
+            båt_affär()
+
+
+        else:
+            print("du skrev något fell skriv exact det som fins inom parentesna")
+#-----------------------------------------------------------------------
+
+
+
+
+
+#affärer#
+#-----------------------------------------------------------------------
+def båt_affär():
+    print("\033c", end="")
+    input("-om jag skaffar en fiske båt så kan jag börja sälja de jag fångar för pengar- tänkte du")
+    while True:
+        input("i affären så kan du sköpa 3 olika båtar eller så kan du gå ivåg")
+        print("du har", kr)
+        frå = input("(ro båt) (fiske båt) (littet krigs skepp) (bort)")
+        if frå == "ro båt":
+            ro_båt_fråga = input("vill du sköpa en robåt för 700? skriv (info) om du vill ha info om båten")
+            if ro_båt_fråga == "info":
+                input("En robåt rymer 5 personer, 5 föremål och 10 fiskar.")
+            elif ro_båt_fråga == "ja":
+                if kr - 700 < 0:
+                    print("sorry broshan du är för fatig 😮‍💨")
+
+                elif kr - 700 > 0:
+                    if ro_båt == True:
+                        print("du har redan en ro båt")
+                    else:
+                        kr -= 700
+                        ro_båt == True
+                        input("DU ÄGER EN RO BÅT NUU!!!!!!")
+                    
+
+            elif ro_båt_fråga == "nej":
+                input("du ångrar dig")
+
+
+        elif frå == "fiske båt":
+            fiske_båt_fråga = input("vill du sköpa en fiske båt för 1000? skriv (info) om du vill ha info om båten")
+            if fiske_båt_fråga == "info":
+                input("En fiske båt rymer 7 personer, 20 föremål och 70 fiskar.")
+            elif fiske_båt_fråga == "ja":
+                if kr - 1000 < 0:
+                    print("sorry broshan du är för fatig 😮‍💨")
+
+                elif kr - 1000 > 0:
+                    if fiske_båt == True:
+                        print("du har redan en fiske båt")
+                    else:
+                        kr -= 1000
+                        ro_båt == True
+                        input("du äger en fiske båt nu!")
+
+            elif fiske_båt_fråga == "nej":
+                input("du ångrar dig")
+
+
+        elif frå == "littet krigs skepp":
+            s_krigs_båt_fråga = input("(ja) om vill du sköpa ett littet krigs skepp för 3500? skriv (info) om du vill ha info om båten. (nej) om du inte vill")
+            if s_krigs_båt_fråga == "info":
+                input("ett krigs skepp rymer 35 personer, 100 föremål  8 cannoner,")
+            elif s_krigs_båt_fråga == "ja":
+                if kr - 1000 < 0:
+                    print("sorry broshan du är för fatig 😮‍💨")
+
+                elif kr - 1000 > 0:
+                    if fiske_båt == True:
+                        print("du har redan en fiske båt")
+                    else:
+                        kr -= 1000
+                        ro_båt == True
+                        input("du äger en fiske båt nu!")
+
+            elif s_krigs_båt_fråga == "nej":
+
+            
+                
+
+        elif frå == "bort":
+            fråga()
+
+        else:
+            print("du skrev något fell skriv bara det som fins inom parenteserna")
+
+#-----------------------------------------------------------------------
+def general_store():
+
+
+
+
+def fråga():
     
 
 
@@ -201,9 +303,9 @@ while loop == True:
     #-----------------------------------------------------------------------
     fråga11 = True
     print("\033c", end="")
-    while fråga11 == True:
-        namn = input("Vad vill du heta? ")
+    namn = input("Vad vill du heta? ")
 
+    while fråga11 == True:
         age = int(input("vilken ålder vill du vara? "))
 
         kön = input("vill du vara man eller kvinna? ")
@@ -213,9 +315,9 @@ while loop == True:
 
         
         loop = False
-        else:
-            fråga11 == False
-            start()
+    else:
+        fråga11 == False
+        start()
     #-----------------------------------------------------------------------
 
 print("SLUT SLUT SLUTAAA!")

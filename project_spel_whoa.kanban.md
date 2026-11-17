@@ -17,17 +17,14 @@
 <!-- id: task-1793873737047-172 -->
 <!-- workload: hard -->
 
-#### gjör sic att man kan äta och sköpa mat
-<!-- id: task-1793873838864-197 -->
-
 ## jobbas med
 
-#### gjör så att man kan sköpe en båt
+#### gjör så att man kan sköpe  båtar (fiske båt + ro båt + krigs skep)
 <!-- id: task-1793873592948-70 -->
 <!-- priority: high -->
 <!-- workload: easy -->
 
-#### gjör så att det fins olika öar
+#### gjör så att det fins olika öar som man kan åka till med båten
 <!-- id: task-1794479393511-454 -->
 <!-- priority: high -->
 <!-- workload: easy -->
