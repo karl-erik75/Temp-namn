@@ -5,7 +5,8 @@ global land
 land = True
 import random
 global age
-global kr 
+global kr
+loop = True 
 ro_båt = False
 fiske_båt = False
 small_krigs_skep = False
@@ -41,6 +42,7 @@ def start():
         iq = 10
     start_event()
 #-----------------------------------------------------------------------
+
 #-----------------------------------------------------------------------
 def start_event():
     print("\033c", end="")
@@ -118,16 +120,18 @@ def start_event():
 
     #-----------------------------------------------------------------------
 #-----------------------------------------------------------------------
+
 #-----------------------------------------------------------------------
 def hem_by_fråga():
     print("\033c", end="")
     input("du vill aldrig gå tillbaka igen! du välger att fly och starta ett nyt liv!")
     åka = input("vart vill du gå nu? skriv (karta) om du vill see vart man kan gå ")
     if åka == "karta":
-        åka = input("du kan gå till (affären) eller skafa (jobb)🤮")
+        åka = input("du kan gå till (affären) eller skafa (jobb)🤮 ")
         if åka == "affären":
-            print("du tänkte gå till affären fast du mins att du är fattig så du välger att gå tillbaka")
-            åka = input("du kan gå ock skaffa ett (jobb)🤮")
+            print("du tänkte gå till affären fast du mins att du är fattig så du välger att gå tillbaka ")
+            åka = input("du kan gå ock skaffa ett (jobb)🤮 ")
+            intro()
             if åka == "jobb":
                 intro()
 
@@ -140,14 +144,16 @@ def hem_by_fråga():
 
     elif åka == "affären":
         print("du tänkte gå till affären fast du mins att du är fattig så du välger att gå tillbaka")
-        åka = input("du kan gå ock skaffa ett (jobb)🤮")
+        åka = input("du kan gå och skaffa ett (jobb)🤮 ")
         if åka == "jobb":
             intro()
 
 
     else:
-        input("du valde att skafa ett jobb🤮")
+        input("du valde att skafa ett jobb🤮 ")
         intro()
+#-----------------------------------------------------------------------
+
 #-----------------------------------------------------------------------
 def intro():
     global age
@@ -162,24 +168,11 @@ def intro():
     input("2 månader senare du har fortfarande inget jobb... ")
     input("du har också förlorat dit hus som du köpte igår 😬")
     input(":(")
-    while True:
-        fråg = input("vart vill du gå nu? skriv (karta) om du vill see vsrt du kan gå")
-        if fråg == "karta":
-            print("skriv (affär) får att gå till affären. skriv (jobb) för att skafa jobb. skriv (båt affär) för att sköpa en båt")
+    fråga_land1()
         
-        elif fråg == "affär":
-            print("de är stängda just nu")
-
-        elif fråg == "jobb":
-            print("ingen vill anstäla dig ")
-
-        elif fråg == "båt affär":
-            input("du gick till båt affären")
-            båt_affär1()
 
 
-        else:
-            print("du skrev något fell skriv exact det som fins inom parentesna")
+        
 #-----------------------------------------------------------------------
 
 
@@ -189,6 +182,7 @@ def intro():
 #affärer#
 #-----------------------------------------------------------------------
 def båt_affär1():
+    global kr
     print("\033c", end="")
     input("-om jag skaffar en fiske båt så kan jag börja sälja de jag fångar för pengar- tänkte du")
     while True:
@@ -263,36 +257,54 @@ def båt_affär1():
 
         else:
             print("du skrev något fell skriv bara det som fins inom parenteserna")
+#-----------------------------------------------------------------------
 
 #-----------------------------------------------------------------------
 def general_store1():
-    print("aj")
+    print("\033c", end="")
+    fråga = input("vad kållar du efter (läkemedel), (vapen), (fiske spö) eller (övriga grejer) ")
 
-
-
-
-def fråga_land1():
-    frå = input("var vill du gå nu? skriv (karta) för att se vart du kan gå")
-    if frå == "karta":
-        frå = input("du kan skriva (affär), (arbete), (båt affär), (lager), (försäljare)")
+    if fråga == "läkemdel":
+        fråga2 = input("inom läkemdlet så kan du sköpa (bandage) för 10 (första hjälpen) för 25 ")
     
-    elif frå == "affär":
-        general_store1()
+    elif fråga == "vapen":
+        fråga2 = input
+        
 
-    elif frå == "båt affär":
-        båt_affär1()
 
-    elif frå == "arbete":
-        print("inte klar")
 
-    elif frå == "lager":
-        print("wip")
 
-    elif frå == "försäljare":
-        print("wip")
 
-    else:
-        print("du skrev något fell skriv bara det som fins inom parenteserna!")
+
+
+
+
+
+
+#-----------------------------------------------------------------------
+def fråga_land1():
+    while True:
+        frå = input("var vill du gå nu? skriv (karta) för att se vart du kan gå")
+        if frå == "karta":
+            frå = input("du kan skriva (affär), (arbete), (båt affär), (lager), (försäljare)")
+        
+        elif frå == "affär":
+            general_store1()
+
+        elif frå == "båt affär":
+            båt_affär1()
+
+        elif frå == "arbete":
+            print("inte klar")
+
+        elif frå == "lager":
+            print("wip")
+
+        elif frå == "försäljare":
+            print("wip")
+
+        else:
+            print("du skrev något fell skriv bara det som fins inom parenteserna!")
 
     
 
@@ -341,14 +353,14 @@ while loop == True:
         if kön != "man" and kön != "kvinna" and kön != "Man" and kön != "Kvinna" or age < 14 or age > 100:
             print("du kan bara vara en (man) eller (kvinna) arnars orimlig ålder (du måste vara melan 14 och 100)")
 
-        
+        fråga11 = False
         loop = False
     else:
-        fråga11 == False
+        
         start()
     #-----------------------------------------------------------------------
 
-print("SLUT SLUT SLUTAAA!")
+print("SLUT")
 
 
     

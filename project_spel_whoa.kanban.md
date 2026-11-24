@@ -13,24 +13,24 @@
 #### gjör så att man kan slås med andra personer
 <!-- id: task-1793873707564-150 -->
 
-#### gjör så att man kan ha skäp strider
-<!-- id: task-1793873737047-172 -->
+#### gjör så attm na kna jaga!
+<!-- id: task-1795512655543-94 -->
 <!-- workload: hard -->
-
-## jobbas med
 
 #### gjör så att det fins olika öar som man kan åka till med båten
 <!-- id: task-1794479393511-454 -->
 <!-- priority: high -->
 <!-- workload: easy -->
 
+#### gjör så att man kan ha skäp strider
+<!-- id: task-1793873737047-172 -->
+<!-- workload: hard -->
+
+## jobbas med
+
 #### gjör klart alla affärerna altså  butiken!
 <!-- id: task-1795512636660-60 -->
 <!-- priority: low -->
-
-#### gjör så attm na kna jaga!
-<!-- id: task-1795512655543-94 -->
-<!-- workload: hard -->
 
 ## klart
 
