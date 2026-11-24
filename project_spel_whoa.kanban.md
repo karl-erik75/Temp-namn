@@ -19,15 +19,18 @@
 
 ## jobbas med
 
-#### gjör så att man kan sköpe  båtar (fiske båt + ro båt + krigs skep)
-<!-- id: task-1793873592948-70 -->
-<!-- priority: high -->
-<!-- workload: easy -->
-
 #### gjör så att det fins olika öar som man kan åka till med båten
 <!-- id: task-1794479393511-454 -->
 <!-- priority: high -->
 <!-- workload: easy -->
+
+#### gjör klart alla affärerna altså  butiken!
+<!-- id: task-1795512636660-60 -->
+<!-- priority: low -->
+
+#### gjör så attm na kna jaga!
+<!-- id: task-1795512655543-94 -->
+<!-- workload: hard -->
 
 ## klart
 
@@ -35,6 +38,11 @@
 <!-- id: task-1792489222998-0 -->
 början(namn ålder kön ock information)
 <!-- priority: low -->
+<!-- workload: easy -->
+
+#### gjör så att man kan sköpe  båtar (fiske båt + ro båt + krigs skep)
+<!-- id: task-1793873592948-70 -->
+<!-- priority: high -->
 <!-- workload: easy -->
 
 #### gjör så att man förlorar sit jobb så att man blir fatig igen ahhhh!!!

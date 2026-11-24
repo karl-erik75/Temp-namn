@@ -8,6 +8,7 @@ global age
 global kr 
 ro_båt = False
 fiske_båt = False
+small_krigs_skep = False
 kr = 7
 #saker (kommer att sortera snart, karnse)
 #-----------------------------------------------------------------------
@@ -174,7 +175,7 @@ def intro():
 
         elif fråg == "båt affär":
             input("du gick till båt affären")
-            båt_affär()
+            båt_affär1()
 
 
         else:
@@ -187,11 +188,11 @@ def intro():
 
 #affärer#
 #-----------------------------------------------------------------------
-def båt_affär():
+def båt_affär1():
     print("\033c", end="")
     input("-om jag skaffar en fiske båt så kan jag börja sälja de jag fångar för pengar- tänkte du")
     while True:
-        input("i affären så kan du sköpa 3 olika båtar eller så kan du gå ivåg")
+        print("i affären så kan du sköpa 3 olika båtar eller så kan du gå ivåg")
         print("du har", kr)
         frå = input("(ro båt) (fiske båt) (littet krigs skepp) (bort)")
         if frå == "ro båt":
@@ -244,31 +245,58 @@ def båt_affär():
                     print("sorry broshan du är för fatig 😮‍💨")
 
                 elif kr - 1000 > 0:
-                    if fiske_båt == True:
-                        print("du har redan en fiske båt")
+                    if small_krigs_skep == True:
+                        print("du har redan ett littet krigs skepp")
                     else:
                         kr -= 1000
-                        ro_båt == True
-                        input("du äger en fiske båt nu!")
+                        small_krigs_skep == True
+                        input("du äger ett littet krigs skepp nu!")
 
             elif s_krigs_båt_fråga == "nej":
+                input("du ångrar dig")
 
             
                 
 
         elif frå == "bort":
-            fråga()
+            fråga_land1()
 
         else:
             print("du skrev något fell skriv bara det som fins inom parenteserna")
 
 #-----------------------------------------------------------------------
-def general_store():
+def general_store1():
+    print("aj")
 
 
 
 
-def fråga():
+def fråga_land1():
+    frå = input("var vill du gå nu? skriv (karta) för att se vart du kan gå")
+    if frå == "karta":
+        frå = input("du kan skriva (affär), (arbete), (båt affär), (lager), (försäljare)")
+    
+    elif frå == "affär":
+        general_store1()
+
+    elif frå == "båt affär":
+        båt_affär1()
+
+    elif frå == "arbete":
+        print("inte klar")
+
+    elif frå == "lager":
+        print("wip")
+
+    elif frå == "försäljare":
+        print("wip")
+
+    else:
+        print("du skrev något fell skriv bara det som fins inom parenteserna!")
+
+    
+
+
     
 
 
