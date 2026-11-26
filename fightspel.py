@@ -168,11 +168,7 @@ def intro():
     input("2 månader senare du har fortfarande inget jobb... ")
     input("du har också förlorat dit hus som du köpte igår 😬")
     input(":(")
-    fråga_land1()
-        
-
-
-        
+    fråga_land1()     
 #-----------------------------------------------------------------------
 
 
@@ -262,14 +258,145 @@ def båt_affär1():
 #-----------------------------------------------------------------------
 def general_store1():
     print("\033c", end="")
-    fråga = input("vad kållar du efter (läkemedel), (vapen), (fiske spö) eller (övriga grejer) ")
+    while True:
+        global kr
+        print("du har", kr)
+        fråga = input("vad söker du efter (läkemedel), (vapen), (fiske spö), (krut vapen) eller (övriga grejer) skriv (bak) om du vill till baka")
+        #-------------------------------------------------------------------------------------------
+        if fråga == "läkemdel":
+            fråga2 = input("inom läkemdlet så kan du sköpa (bandage) (första hjälpen) (bak) om du vill till baka ")
+            if fråga2 == "bandage":
+                fråga3 = input("är du säker du vill köpa bandage för 5 styk `den läker 25 hp av dit 100 hp  (ja) eller (nej) ")
+                if fråga3 == "ja":
+                     #-----------------------------------------------
+                    print("snart")
+                     #-----------------------------------------------
 
-    if fråga == "läkemdel":
-        fråga2 = input("inom läkemdlet så kan du sköpa (bandage) för 10 (första hjälpen) för 25 ")
-    
-    elif fråga == "vapen":
-        fråga2 = input
-        
+
+                
+            elif fråga2 == "första hjälpen":
+                fråga3 = input("är du säker att du vill köpa första hjälpen för 25 styck `den läker 80hp av dit 100 hp`(ja) eller (nej) ")
+                if fråga3 == "ja":
+                 #-----------------------------------------------
+                    print("snart")
+                 #-----------------------------------------------
+
+            elif fråga2 == "bak":
+                print("\033c", end="")
+        #-------------------------------------------------------------------------------------------
+        #-------------------------------------------------------------------------------------------
+        elif fråga == "vapen":
+            fråga2 = input("dom vapen som fins är (spjut), (svärd), (kniv), (pilbåge) skriv (bak) om du vill till baka")
+            if fråga2 == "spjut":
+                fråga3 = input("är du säker du vill köpa ett spjut som  kostar 20 styck och gör 25 skada i slag och 40 skada om kastat (ja) eller (nej) ")
+                if fråga3 == "ja":
+                 #-----------------------------------------------
+                   print("snart")
+                 #-----------------------------------------------
+            #---------------------------------------------------------------------------------------------
+            elif fråga2 == "svärd":
+                fråga3 = input("är du säker du vill köpa ett svärd som  kostar 40 och gör 30 skada (ja) eller (nej) ")
+                if fråga3 == "ja":
+                
+                    if svärd == False and kr >= 40:
+                        svärd = True
+                        kr 
+
+                elif fråga3 == "nej":
+                    input("du valde att inte köpa något")
+                    print("\033c", end="")
+            #---------------------------------------------------------------------------------------------
+            elif fråga2 == "kniv":
+                fråga3 = input("vill du köpa en kniv för 10 styck och gör 10 skada i slag och 15 kastat (ja) eller (nej) ")
+                if fråga3 == "ja":
+                 #-----------------------------------------------
+                    print("snart")
+                 #-----------------------------------------------
+            #---------------------------------------------------------------------------------------------
+            elif fråga2 == "pilbäge":
+                fråga3 = input("är du säker du vill köpa en pilbåge för 50 som gör 25 skade pär skott (ja) eller (nej) ")
+                if fråga3 == "ja":
+                
+                    if pilbåge == False and kr >= 50:
+                    
+
+                elif fråga3 == "nej":
+                    input("du valde att inte köpa något")
+                    print("\033c", end="")
+            #---------------------------------------------------------------------------------------------
+            elif fråga2 == "bak":
+                print("\033c", end="")
+        #-------------------------------------------------------------------------------------------
+        #-------------------------------------------------------------------------------------------
+        elif fråga == "fiske spö":
+            fråga2 = input("det fins 3 olika fiske spön (begagnad), (ny), (premium) skriv (bak) om du vill till baka")
+            if fråga2 == "begagnad":
+                fråga3 = input("är du säker du vill köpa ett bagagnad fiske spå för 20 kr?(ja) eller (nej) ")
+                if fråga3 == "ja":
+                
+                    if bandage == False and kr >= 5:
+
+                elif fråga3 == "nej":
+                    input("du valde att inte köpa något")
+                    print("\033c", end="")
+
+            elif fråga2 == "ny":
+                fråga3 = input("är du säker du vill köpa ett nyt fiske spå för 50 kr? (ja) eller (nej) ")
+                if fråga3 == "ja":
+                
+                    if bandage == False and kr >= 5:
+
+                elif fråga3 == "nej":
+                    input("du valde att inte köpa något")
+                    print("\033c", end="")
+
+            elif fråga2 == "premium":
+                fråga3 = input("är du säker du vill köpa ett premium fiske spå för 150 kr?( ja) eller (nej) ")
+                if fråga3 == "ja":
+                
+                    if bandage == False and kr >= 5:
+
+                elif fråga3 == "nej":
+                    input("du valde att inte köpa något")
+                    print("\033c", end="")
+
+            elif fråga2 == "bak":
+                print("\033c", end="")
+        #-------------------------------------------------------------------------------------------
+        #-------------------------------------------------------------------------------------------
+        elif fråga == "krut vapen":
+            fråga2 = input("du kan välga melan desa krut vapen (flintlock), (musket), (blunderbuss) skriv (bak) om du vill till baka")
+            if fråga2 == "flintlock":
+                fråga3 = input("är du säker du vill köpa en fintlock för 70 som gör 75 skada (ja) eller (nej) ")
+                if fråga3 == "ja":
+                
+                    if bandage == False and kr >= 5:
+
+                elif fråga3 == "nej":
+                    input("du valde att inte köpa något")
+                    print("\033c", end="")
+            elif fråga2 == "musket":
+                fråga3 = input("är du äker du vill köpa en musket för 150 som gör 120 skada (ja) eller (nej) ")
+                if fråga3 == "ja":
+                
+                    if bandage == False and kr >= 5:
+
+                elif fråga3 == "nej":
+                    input("du valde att inte köpa något")
+                    print("\033c", end="")
+            elif fråga2 == "blundebuss":
+                fråga3 = input("är du söker du vill köpa en blunderbuss för 125 som gjör 170 skada närvid men mycket mindre längre bort (ja) eller (nej) ")
+                if fråga3 == "ja":
+                
+                    if bandage == False and kr >= 5:
+
+                elif fråga3 == "nej":
+                    input("du valde att inte köpa något")
+                    print("\033c", end="")
+
+            elif fråga2 == "bak":
+                print("\033c", end="")
+        #-------------------------------------------------------------------------------------------
 
 
 
