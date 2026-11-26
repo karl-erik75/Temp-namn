@@ -20,7 +20,7 @@ def start():
     global age2
    
     print("\033c", end="")
-    print("du heter", (namn), "din ålder är", (age), "du är en", (kön))
+    print("du heter", (namn), "din ålder är", (age))
     if age >= 70:
         age2 = "gamal"
         input("du är över 70 vad som gjör att du blir långsamare och svagare men smartare")
@@ -264,7 +264,7 @@ def general_store1():
         fråga = input("vad söker du efter (läkemedel), (vapen), (fiske spö), (krut vapen) eller (övriga grejer) skriv (bak) om du vill till baka")
         #-------------------------------------------------------------------------------------------
         if fråga == "läkemdel":
-            fråga2 = input("inom läkemdlet så kan du sköpa (bandage) (första hjälpen) (bak) om du vill till baka ")
+            fråga2 = input("inom läkemdlet så kan du sköpa (bandage)(första hjälpen) (bak) om du vill till baka ")
             if fråga2 == "bandage":
                 fråga3 = input("är du säker du vill köpa bandage för 5 styk `den läker 25 hp av dit 100 hp  (ja) eller (nej) ")
                 if fråga3 == "ja":
@@ -300,7 +300,12 @@ def general_store1():
                 
                     if svärd == False and kr >= 40:
                         svärd = True
-                        kr 
+                        kr -= 40
+                        input("du har ett svärd nu!!!")
+
+                    else:
+                        input("du har inte nog mycket pengar du behöver 40")
+
 
                 elif fråga3 == "nej":
                     input("du valde att inte köpa något")
@@ -318,6 +323,16 @@ def general_store1():
                 if fråga3 == "ja":
                 
                     if pilbåge == False and kr >= 50:
+                        kr -=50
+                        input("du köpte en pilbåge för 50!")
+                        pilbåge = True
+
+                    
+
+                    else:
+                        input("du har för lite pengar du behöver mins 50")
+                        print("\033c", end="")
+
                     
 
                 elif fråga3 == "nej":
@@ -330,36 +345,60 @@ def general_store1():
         #-------------------------------------------------------------------------------------------
         elif fråga == "fiske spö":
             fråga2 = input("det fins 3 olika fiske spön (begagnad), (ny), (premium) skriv (bak) om du vill till baka")
+         #------------------------------------------------------------------
             if fråga2 == "begagnad":
                 fråga3 = input("är du säker du vill köpa ett bagagnad fiske spå för 20 kr?(ja) eller (nej) ")
                 if fråga3 == "ja":
-                
-                    if bandage == False and kr >= 5:
+            
+                    if spö_bg == False and kr >= 20:
+                        kr -= 20
+                        spö_bg = True
+                        print("du äger ett begagnad fiske spö nu!")
+
+                    else:
+                        print("du har inte nog mycket pengar du behöver 20")
+
 
                 elif fråga3 == "nej":
                     input("du valde att inte köpa något")
                     print("\033c", end="")
-
+         #------------------------------------------------------------------ 
             elif fråga2 == "ny":
                 fråga3 = input("är du säker du vill köpa ett nyt fiske spå för 50 kr? (ja) eller (nej) ")
                 if fråga3 == "ja":
                 
-                    if bandage == False and kr >= 5:
+                    if spö_ny == False and kr >= 50:
+                        kr -= 50
+                        spö_ny = True
+                        print("du äger ett nyt fiske spö nu!")
+
+                    else:
+                        print("du har inte nog mycket pengar du behöver 50")
+                        print("\033c", end="")
 
                 elif fråga3 == "nej":
                     input("du valde att inte köpa något")
                     print("\033c", end="")
-
+             #-------------------------------------------------------------------------------------------
+         #------------------------------------------------------------------
             elif fråga2 == "premium":
                 fråga3 = input("är du säker du vill köpa ett premium fiske spå för 150 kr?( ja) eller (nej) ")
                 if fråga3 == "ja":
                 
-                    if bandage == False and kr >= 5:
+                    if spö_prem == False and kr >= 150:
+                        kr -= 150
+                        spö_perm = True
+                        print("du äger ett premium fiske spö nu!")
 
+                    else:
+                        print("du har inte nog mycket pengar du behöver 150")
+                        print("\033c", end="")
+                        
+        #-------------------------------------------------------------------------------------------
                 elif fråga3 == "nej":
                     input("du valde att inte köpa något")
                     print("\033c", end="")
-
+         #------------------------------------------------------------------
             elif fråga2 == "bak":
                 print("\033c", end="")
         #-------------------------------------------------------------------------------------------
@@ -370,16 +409,41 @@ def general_store1():
                 fråga3 = input("är du säker du vill köpa en fintlock för 70 som gör 75 skada (ja) eller (nej) ")
                 if fråga3 == "ja":
                 
-                    if bandage == False and kr >= 5:
+                    if  flintlock == False and kr >= 70:
+                        kr -= 70
+                        flintlock = True 
+                        input("du äger en flintlock nu!")
+                        print("\033c", end="")
+
+                    else:
+                        print("du har inte nog mycket pengar du behöver 70")
+
+
+
+
+
 
                 elif fråga3 == "nej":
                     input("du valde att inte köpa något")
                     print("\033c", end="")
+            
             elif fråga2 == "musket":
                 fråga3 = input("är du äker du vill köpa en musket för 150 som gör 120 skada (ja) eller (nej) ")
                 if fråga3 == "ja":
                 
-                    if bandage == False and kr >= 5:
+                    if musket == False and kr >= 150:
+                        kr -= 150
+                        musket = True
+                        input("du äger en musket nu ")
+                        print("\033c", end="")
+
+                    else:
+                        input("du har inte pengarna nog för att köpa dena produkt")
+                        print("\033c", end="")
+
+
+                    
+                        
 
                 elif fråga3 == "nej":
                     input("du valde att inte köpa något")
@@ -388,16 +452,25 @@ def general_store1():
                 fråga3 = input("är du söker du vill köpa en blunderbuss för 125 som gjör 170 skada närvid men mycket mindre längre bort (ja) eller (nej) ")
                 if fråga3 == "ja":
                 
-                    if bandage == False and kr >= 5:
+                    if blunderbuss == False and kr >= 125:
+                        kr -= 125
+                        blunderbuss = True
+                        input("du har en blunderbuss nu!! ")
+                        print("\033c", end="")
+
+                    else:
+                        input("du har inte nog mycket pengar för att köpa det här du behöver 125")
+
 
                 elif fråga3 == "nej":
                     input("du valde att inte köpa något")
                     print("\033c", end="")
 
             elif fråga2 == "bak":
-                print("\033c", end="")
+                input("du valde att inte köpa något")
+                print("\033c", end="")        
         #-------------------------------------------------------------------------------------------
-
+#-----------------------------------------------------------------------
 
 
 
@@ -477,8 +550,8 @@ while loop == True:
 
         kön = input("vill du vara man eller kvinna? ")
 
-        if kön != "man" and kön != "kvinna" and kön != "Man" and kön != "Kvinna" or age < 14 or age > 100:
-            print("du kan bara vara en (man) eller (kvinna) arnars orimlig ålder (du måste vara melan 14 och 100)")
+        if age < 14 or age > 100:
+            print("(du måste vara melan 14 och 100)")
 
         fråga11 = False
         loop = False
